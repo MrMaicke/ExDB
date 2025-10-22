@@ -6,9 +6,10 @@ USE meuPrimeiroBanco;
 
 -- Exemplo de criação de uma entidade no banco de dados
 CREATE TABLE Usuario(
-	idUsuario INT PRIMARY KEY,
+	idUsuario INT PRIMARY KEY IDENTITY,
 	Nome VARCHAR(120),
 	Email VARCHAR(60)
+	-- Senha Varchar(120)
 );
 
 CREATE TABLE Produto(
@@ -30,6 +31,7 @@ ALTER TABLE Usuario ALTER COLUMN Nome VARCHAR(120) NOT NULL;
 
 -- Deletar uma tabela (NUNCA USE ISSO)
 DROP TABLE Usuario;
+DROP TABLE Produto;
 
 
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
@@ -37,9 +39,9 @@ DROP TABLE Usuario;
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 
 INSERT INTO Usuario
-	(idUsuario, Nome, Email, Senha)
+	(/*idUsuario,*/ Nome, Email, Senha)
 VALUES
-	(1, 'Marcelo Santiago', 'MarceloSantiago@gmail.com', '1234');
+	(/*1,*/ 'Marcelo Santiago', 'MarceloSantiago@gmail.com', '1234');
 
 --consultar as informações da tabela de usuario
 SELECT * FROM Usuario;
