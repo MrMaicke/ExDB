@@ -5,7 +5,7 @@ CREATE DATABASE meuPrimeiroBanco;
 USE meuPrimeiroBanco;
 
 -- Exemplo de criação de uma entidade no banco de dados
-CREATE TABLE Usuario(
+CREATE TABLE Produto(
 	idUsuario INT PRIMARY KEY IDENTITY,
 	Nome VARCHAR(120),
 	Email VARCHAR(60)
@@ -21,7 +21,7 @@ CREATE TABLE Produto(
 );
 
 -- Adicionar uma coluna
-ALTER TABLE Usuario ADD Senha VARCHAR(15);
+ALTER TABLE Produto ADD Senha VARCHAR(15);
 
 -- Remover uma coluna
 ALTER TABLE Usuario DROP COLUMN Senha;
@@ -33,12 +33,11 @@ ALTER TABLE Usuario ALTER COLUMN Nome VARCHAR(120) NOT NULL;
 DROP TABLE Usuario;
 DROP TABLE Produto;
 
-
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 -- Inserindo Novas informações na Tabela.--
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 
-INSERT INTO Usuario
+INSERT INTO Produto
 	(/*idUsuario,*/ Nome, Email, Senha)
 VALUES
 	(/*1,*/ 'Marcelo Santiago', 'MarceloSantiago@gmail.com', '1234');
@@ -47,7 +46,14 @@ VALUES
 SELECT * FROM Usuario;
 
 -- Aterar um registrooo
-UPDATE Usuario SET Nome = 'Marcelo Santiago de Oliveira' WHERE idUsuario = 1
+UPDATE Produto SET Nome = 'Marcelo Santiago de Oliveira' WHERE idUsuario = 1
 
 -- Delete um registro
-DELETE Usuario WHERE idUsuario = 1;
+DELETE Produto WHERE idUsuario = 3;
+
+INSERT INTO Produto
+	(Nome, Usuario_id)
+VALUES
+	('Produto', 10);
+
+SELECT * FROM Produto;
