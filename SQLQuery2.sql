@@ -55,6 +55,8 @@ values
 ('Projetor de sala 02', getdate(), 0, 2, 2);
 
 select * from Ativos;
+select * from Usuario;
+select * from locais;
 
 /* Especificar quais parametros iremos consultar */
 select
@@ -73,3 +75,9 @@ inner join
 	usuario
 on
 	usuario.id = ativos.usuario_id
+inner join
+	Locais
+on
+	Locais.id = Ativos.Locais_id
+where
+	ativos.usuario_id = 3
